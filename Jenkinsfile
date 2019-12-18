@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Get From SCM'){
             steps{
-                git clone git@github.com:satkuru/springbootdemo.git
+                sh git clone git@github.com:satkuru/springbootdemo.git
             }
         }
         stage('Build'){
