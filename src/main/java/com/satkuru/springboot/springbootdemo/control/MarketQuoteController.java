@@ -18,7 +18,11 @@ public class MarketQuoteController {
     @GetMapping("/{name}")
     public HistoricalQuote getMarketQuote(@PathVariable String name) throws IOException {
         Stock stock = YahooFinance.get(name);
-        Optional<HistoricalQuote> quote = stock.getHistory().stream().findFirst();
+        Optional<HistoricalQuote> quote = stock
+                .getHistory()
+                .stream()
+                .sorted((s1,s2)->s2.getDate().compareTo(s1.getDate()))
+                .findFirst();
         return quote.get();
     }
 }

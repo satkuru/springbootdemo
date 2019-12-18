@@ -13,15 +13,6 @@ public class SpringbootApplication {
 
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(SpringbootApplication.class, args);
-		System.out.println("Started");
-//		Stock stock = YahooFinance.get("INTC");
-//
-//		BigDecimal price = stock.getQuote().getPrice();
-//		BigDecimal change = stock.getQuote().getChangeInPercent();
-//		BigDecimal peg = stock.getStats().getPeg();
-//		BigDecimal dividend = stock.getDividend().getAnnualYieldPercent();
-//
-//		stock.print();
 	}
 
 }
