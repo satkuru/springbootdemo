@@ -3,7 +3,13 @@ pipeline {
     stages {
         stage('Get From SCM'){
             steps{
-                echo 'getting source from github repo'
+                git clone git@github.com:satkuru/springbootdemo.git
+            }
+        }
+        stage('Build'){
+            steps{
+                cd springbootdemo
+                mvn clean compile
             }
         }
     }
